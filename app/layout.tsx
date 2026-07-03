@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Courier_Prime, Press_Start_2P } from "next/font/google";
+import { Courier_Prime, JetBrains_Mono, Press_Start_2P } from "next/font/google";
 import "./globals.css";
 
 const pressStart = Press_Start_2P({
@@ -9,8 +9,15 @@ const pressStart = Press_Start_2P({
   display: "swap",
 });
 
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
 const courierPrime = Courier_Prime({
-  variable: "--font-mono",
+  variable: "--font-courier",
   weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
@@ -29,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${pressStart.variable} ${courierPrime.variable} h-full antialiased`}
+      className={`${pressStart.variable} ${jetBrainsMono.variable} ${courierPrime.variable} h-full antialiased`}
     >
       <body className="min-h-full">{children}</body>
     </html>
